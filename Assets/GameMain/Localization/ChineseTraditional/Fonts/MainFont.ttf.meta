@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 94b52ae5c9f94524c81b44901f7f936f
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: FZZhunYuan-M02
+  fontNames:
+  - FZZhunYuan-M02
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 73c2bea7b5acd344cbb2e0758683d3a0, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
