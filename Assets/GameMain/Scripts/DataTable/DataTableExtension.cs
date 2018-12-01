@@ -6,7 +6,7 @@ namespace MiniJY
 {
     public static class DataTableExtension
     {
-        private const string DataRowClassPrefixName = "StarForce.DR";
+        private const string DataRowClassPrefixName = "MiniJY.DR";
         private static readonly string[] ColumnSplit = new string[] { "\t" };
 
         public static void LoadDataTable(this DataTableComponent dataTableComponent, string dataTableName, object userData = null)

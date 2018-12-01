@@ -73,17 +73,12 @@ namespace MiniJY
             LoadConfig("DefaultConfig");
 
             // Preload data tables
-            //LoadDataTable("Aircraft");
-            //LoadDataTable("Armor");
-            //LoadDataTable("Asteroid");
-            //LoadDataTable("Entity");
-            //LoadDataTable("Music");
-            //LoadDataTable("Scene");
-            //LoadDataTable("Sound");
-            //LoadDataTable("Thruster");
-            //LoadDataTable("UIForm");
-            //LoadDataTable("UISound");
-            //LoadDataTable("Weapon");
+            LoadDataTable("Item");
+            LoadDataTable("Kongfu");
+            LoadDataTable("Lingwu");
+            LoadDataTable("Map");
+            LoadDataTable("Person");
+            LoadDataTable("Skill");
 
             // Preload dictionaries
             LoadDictionary("Default");
