@@ -68,6 +68,7 @@
     <Compile Include="Assets\GameMain\Scripts\BuiltinData\DeviceModelConfig.cs" />
     <Compile Include="Assets\GameMain\Scripts\Config\ConfigExtension.cs" />
     <Compile Include="Assets\GameMain\Scripts\DataTable\DataTableExtension.cs" />
+    <Compile Include="Assets\GameMain\Scripts\DataTable\DRForce.cs" />
     <Compile Include="Assets\GameMain\Scripts\DataTable\DRItem.cs" />
     <Compile Include="Assets\GameMain\Scripts\DataTable\DRKongfu.cs" />
     <Compile Include="Assets\GameMain\Scripts\DataTable\DRLingwu.cs" />
@@ -85,6 +86,7 @@
     <Compile Include="Assets\GameMain\Scripts\Definition\DataStruct\VersionInfo.cs" />
     <Compile Include="Assets\GameMain\Scripts\Localization\LocalizationExtension.cs" />
     <Compile Include="Assets\GameMain\Scripts\Localization\XmlLocalizationHelper.cs" />
+    <Compile Include="Assets\GameMain\Scripts\Logic\GameData.cs" />
     <Compile Include="Assets\GameMain\Scripts\Logic\GameLogic.cs" />
     <Compile Include="Assets\GameMain\Scripts\Procedure\ProcedureBase.cs" />
     <Compile Include="Assets\GameMain\Scripts\Procedure\ProcedureCheckVersion.cs" />
@@ -110,6 +112,7 @@
     <None Include="Assets\GameMain\Localization\ChineseSimplified\Dictionaries\Default.xml" />
     <None Include="Assets\GameMain\DataTables\Map.txt" />
     <None Include="Assets\GameMain\DataTables\Person.txt" />
+    <None Include="Assets\GameMain\DataTables\Force.txt" />
     <None Include="Assets\GameMain\Configs\DefaultDictionary.xml" />
     <None Include="Assets\GameMain\Configs\DefaultConfig.txt" />
     <None Include="Assets\GameMain\DataTables\Lingwu.txt" />

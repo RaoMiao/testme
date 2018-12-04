@@ -26,44 +26,71 @@ namespace MiniJY
             private set;
         }
 
-        private const int MaxProgressCount = 6; // 进度
-        private int[] m_Progress = new int[MaxProgressCount];
-
-        private const int MaxPrevSceneCount = 10; //前置场景数量
-        private int[] m_PrevScene = new int[MaxPrevSceneCount];
-        private int[] m_PrevSceneProgress = new int[MaxPrevSceneCount];
-
         /// <summary>
-        /// 是否允许多个界面实例。
+        /// 图片。
         /// </summary>
-        public bool AllowMultiInstance
+        public int Pic
         {
             get;
             private set;
         }
 
         /// <summary>
-        /// 是否暂停被其覆盖的界面。
+        /// 音乐。
         /// </summary>
-        public bool PauseCoveredUIForm
+        public int Music
         {
             get;
             private set;
         }
 
-        public int GetProgress(int index)
+        private const int ZaBingCount = 20; // 
+        private int[] m_ZaBing = new int[ZaBingCount];
+
+        private const int SmallBossCount = 10; // 
+        private int[] m_SmallBoss = new int[SmallBossCount];
+
+        /// <summary>
+        /// 大Boss。
+        /// </summary>
+        public int BigBoss
         {
-            return index < m_Progress.Length ? m_Progress[index] : 0;
+            get;
+            private set;
         }
 
-        public int GetPrevScene(int index)
+        private const int PassBossCount = 10; // 
+        private int[] m_PassBoss = new int[PassBossCount];
+
+        public int GetZaBing(int index)
         {
-            return index < m_PrevScene.Length ? m_PrevScene[index] : 0;
+            return index < m_ZaBing.Length ? m_ZaBing[index] : 0;
         }
 
-        public int GetPrevSceneProgress(int index)
+        public int GetSmallBoss(int index)
         {
-            return index < m_PrevSceneProgress.Length ? m_PrevSceneProgress[index] : 0;
+            return index < m_SmallBoss.Length ? m_SmallBoss[index] : 0;
+        }
+
+        public int GetPassBoss(int index)
+        {
+            return index < m_PassBoss.Length ? m_PassBoss[index] : 0;
+        }
+
+        private const int BeforeFightCount = 10; // 
+        private int[] m_BeforeFight = new int[BeforeFightCount];
+
+        private const int AfterFightCount = 10; // 
+        private int[] m_AfterFight = new int[AfterFightCount];
+
+        public int GetBeforeFight(int index)
+        {
+            return index < m_BeforeFight.Length ? m_BeforeFight[index] : 0;
+        }
+
+        public int GetAfterFight(int index)
+        {
+            return index < m_AfterFight.Length ? m_AfterFight[index] : 0;
         }
 
         public void ParseDataRow(string dataRowText)
@@ -73,20 +100,34 @@ namespace MiniJY
             index++;
             Id = int.Parse(text[index++]);
             Name = text[index++];
+            Pic = int.Parse(text[index++]);
+            Music = int.Parse(text[index++]);
 
-            for (int i = 0; i < MaxProgressCount; i++)
+            for (int i = 0; i < ZaBingCount; i++)
             {
-                m_Progress[i] = int.Parse(text[index++]);
+                m_ZaBing[i] = int.Parse(text[index++]);
             }
 
-            for (int i = 0; i < MaxPrevSceneCount; i++)
+            for (int i = 0; i < SmallBossCount; i++)
             {
-                m_PrevScene[i] = int.Parse(text[index++]);
+                m_SmallBoss[i] = int.Parse(text[index++]);
             }
 
-            for (int i = 0; i < MaxPrevSceneCount; i++)
+            BigBoss = int.Parse(text[index++]);
+
+            for (int i = 0; i < PassBossCount; i++)
             {
-                m_PrevSceneProgress[i] = int.Parse(text[index++]);
+                m_PassBoss[i] = int.Parse(text[index++]);
+            }
+
+            for (int i = 0; i < BeforeFightCount; i++)
+            {
+                m_BeforeFight[i] = int.Parse(text[index++]);
+            }
+
+            for (int i = 0; i < AfterFightCount; i++)
+            {
+                m_AfterFight[i] = int.Parse(text[index++]);
             }
         }
     }

@@ -66,21 +66,84 @@ namespace MiniJY
         public int m_logMaxPage = 0;
         //??
         public int m_personStatusPage = 0;
-        //??存键值的表 
-        public Dictionary<string, int> m_base = new Dictionary<string, int>();
-        //人物个数
-        public int m_personNum = 0;
-        //人物数据
-        public List<Dictionary<string, int>> m_person = new List<Dictionary<string, int>>();
-        //人物个数
-        public int m_forceNum = 0;
-        //人物数据
-        public List<Dictionary<string, int>> m_force = new List<Dictionary<string, int>>();
-        //场景个数
-        public int m_mapNum=0;
-        //场景数据
-        public Dictionary<int, Dictionary<string,int>> m_map = new Dictionary<int, Dictionary<string, int>>();
 
+        //Base 数据
+        public int m_Base_BossTimer = 900;
+    
+        //MAX SPD
+        public int m_Base_MaxSPD = 999;
+
+        //下个场景
+        public int m_Base_NextScene = 1;
+
+        //当前地图
+        public int m_Base_CurrentMap = 1;
+
+        //当前场景
+        public int m_Base_CurrentScene = 0;
+
+        //当前音乐
+        public int m_Base_CurrentMusic = -1;
+
+        //当前事件
+        public int m_Base_CurrentEvent = 0;
+
+        //倒计时
+        public int m_Base_CountDown = 900;
+
+        //力量
+        public int m_Base_Strength = 0;
+
+        //自由属性点
+        public int m_Base_FreePoint = 0;
+
+        //体力
+        public int m_Base_Tili = 100;
+
+        //实战
+        public int m_Base_ShiZhan = 0;
+
+        //潜能
+        public int m_Base_Qianneng = 500;
+
+        //黄金
+        public int m_Base_Gold = 0;
+
+        enum AttrType
+        {
+            //臂力
+            AT_BILI,
+            //根骨
+            AT_GENGU,
+            //机敏
+            AT_JIMIN,
+            //悟性
+            AT_WUXING,
+            //福缘
+            AT_FUYUAN,
+            //生命            AT_HP,            //内力            AT_MP,
+            //所有值
+            AT_MAX,
+        }
+        //属性成长
+        public int[] m_Base_ChengZhang = new int[(int)AttrType.AT_MAX] {4,4,4,4,4,4,4};
+        //属性加值
+        public int[] m_Base_Addon = new int[(int)AttrType.AT_MAX] {0,0,0,0,0,0,0};
+        //修炼备选
+        public int m_Base_MusicOn = 1;
+        //自宫
+        public int m_Base_Zigong = 0;
+
+        enum AttrType2
+        {
+            ATT2_DAMAGE,
+            ATT2_HIT,
+            ATT2_BLOCK,
+            ATT2_DODGE,
+            ATT2_MAX,
+        }
+
+        public int[] m_Base_BasicAttr2 = new int[(int)AttrType2.ATT2_MAX] {0, 0, 0, 0 };
 
         public static GameLogic Instance
         {
@@ -107,5 +170,10 @@ namespace MiniJY
 
         }
 
+        //读取存档记录
+        public void LoadRecord(int id)
+        {
+
+        }
     }
 }
