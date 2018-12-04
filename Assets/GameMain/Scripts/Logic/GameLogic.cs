@@ -106,44 +106,74 @@ namespace MiniJY
         //潜能
         public int m_Base_Qianneng = 500;
 
+        //节
+        public int m_Base_Jie = 0;
+
         //黄金
         public int m_Base_Gold = 0;
 
-        enum AttrType
-        {
-            //臂力
-            AT_BILI,
-            //根骨
-            AT_GENGU,
-            //机敏
-            AT_JIMIN,
-            //悟性
-            AT_WUXING,
-            //福缘
-            AT_FUYUAN,
-            //生命            AT_HP,            //内力            AT_MP,
-            //所有值
-            AT_MAX,
-        }
-        //属性成长
-        public int[] m_Base_ChengZhang = new int[(int)AttrType.AT_MAX] {4,4,4,4,4,4,4};
+        //臂力
+        public int m_Base_Bili = 4;
+
+        //根骨       
+        public int m_Base_Gengu = 4;
+
+        //机敏       
+        public int m_Base_JiMin = 4;
+
+        //悟性      
+        public int m_Base_Wuxing = 4;
+
+        //福缘
+        public int m_Base_FuYuan = 4;
+
+        //生命
+        public int m_Base_Hp = 4;
+
+        //生命
+        public int m_Base_Mp = 4;
+
         //属性加值
-        public int[] m_Base_Addon = new int[(int)AttrType.AT_MAX] {0,0,0,0,0,0,0};
+        //臂力
+        public int m_Base_BiliAddon = 0;
+
+        //根骨       
+        public int m_Base_GenguAddon = 0;
+
+        //机敏       
+        public int m_Base_JiMinAddon = 0;
+
+        //悟性      
+        public int m_Base_WuxingAddon = 0;
+
+        //福缘
+        public int m_Base_FuYuanAddon = 0;
+
+        //生命
+        public int m_Base_HpAddon = 0;
+
+        //生命
+        public int m_Base_MpAddon = 0;
+
         //修炼备选
         public int m_Base_MusicOn = 1;
         //自宫
         public int m_Base_Zigong = 0;
 
-        enum AttrType2
-        {
-            ATT2_DAMAGE,
-            ATT2_HIT,
-            ATT2_BLOCK,
-            ATT2_DODGE,
-            ATT2_MAX,
-        }
+        //伤害
+        public int m_Base_BasicDamage = 0;
 
-        public int[] m_Base_BasicAttr2 = new int[(int)AttrType2.ATT2_MAX] {0, 0, 0, 0 };
+        //命中
+        public int m_Base_BasicHit = 0;
+
+        //格挡
+        public int m_Base_BasicBlock = 0;
+
+        //闪避
+        public int m_Base_BasicDodge = 0;
+
+        //Person 
+        public Dictionary<int, Person> m_Persons = new Dictionary<int, Person>();
 
         public static GameLogic Instance
         {
@@ -161,13 +191,48 @@ namespace MiniJY
         //创建新角色
         public void NewPerson()
         {
-
+            
         }
 
         //重置玩家属性
         public void ResetAttrib()
         {
+            m_pid = 0;
+            for(int i = 0; i < AT_MAX; i++)
+            {
+                m_Base_Addon[i] = 0;
+            }
 
+            m_Base_Qianneng = 500;
+            m_Base_ShiZhan = 0;
+            m_Base_Jie = 0;
+
+
+            m_Persons[m_pid].HpMax = 100;
+            m_Persons[m_pid].MpMax = 80;
+
+            m_Persons[m_pid].Hp = m_Persons[m_pid].HpMax;
+            m_Persons[m_pid].Mp = m_Persons[m_pid].MpMax;
+    
+    // for i,v in pairs({"膂力","根骨","机敏","悟性","福缘"}) do
+    //     JY.Person[JY.pid][v]=4; 
+    //     JY.Base[v.."成长"]=0; 
+    // end
+    // JY.Base["自由属性点"]=10;
+    // JY.Base["相性"]=math.random(256)-1; 
+    // SetFreePoint();
+    // for i=1,5 do
+    //     if JY.Person[JY.pid]["武功"..i]>0 then
+    //         local n=JY.Person[JY.pid]["武功"..i]
+    //         JY.Base["武功等级"..n]=JY.Person[JY.pid]["武功等级"..i];
+    //     end
+    // end
+    // for i,v in pairs({"内功","轻功","特技"}) do
+    //     if JY.Person[JY.pid][v]>0 then
+    //     local n=JY.Person[JY.pid][v]
+    //         JY.Base["武功等级"..n]=JY.Person[JY.pid][v.."等级"];
+    //     end
+    // end 
         }
 
         //读取存档记录
